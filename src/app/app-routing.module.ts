@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 // Components
 
+import { FAQsListComponent } from './components/components-faqs/faqs-list/faqs-list.component';
+import { FAQProfileComponent } from './components/components-faqs/faq-profile/faq-profile.component';
 import { CustomerProfileComponent } from './components/components-customers/customer-profile/customer-profile.component';
 import { CustomersListComponent } from './components/components-customers/customers-list/customers-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -24,6 +26,9 @@ import { RestaurantAddDishesComponent } from './components/components-restaurant
 
 const routes: Routes = [
   { path: '', component: DashboardComponent},
+  { path: 'list-faqs', component: FAQsListComponent},
+  { path: 'list-faqs/:_id', component: FAQProfileComponent},
+  
   { path: 'list-customers/add-customer', component: CustomerAddProfileComponent},
   { path: 'list-customers', component: CustomersListComponent},
   { path: 'list-customers/:_id', component: CustomerProfileComponent},

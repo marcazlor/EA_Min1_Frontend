@@ -3,7 +3,7 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading"> Appétit </div>
       <div class="list-group list-group-flush">
-        <a class="list-group-item list-group-item-action bg-light" [routerLink]="['']"> Dashboard </a>        
+        <a class="list-group-item list-group-item-action bg-light" [routerLink]="['']"> Dashboard </a>
         <a class="list-group-item list-group-item-action bg-light" [routerLink]="['/list-faqs']"> FAQs </a>
         <a class="list-group-item list-group-item-action bg-light" [routerLink]="['/list-customers']"> Customers </a>
         <a class="list-group-item list-group-item-action bg-light" [routerLink]="['/list-owners']"> Owners </a>
@@ -43,29 +43,29 @@
             <div class="col-lg-10 offset-lg-1">
                 <div class="card">
                     <div class="card-body text-center">
-                        <span class="title"> LLISTAT DE CUSTOMERS </span>
-                        <table *ngIf="listCustomers.length > 0" class="table table-striped mt-3">
+                        <span class="title"> LLISTAT DE FAQs </span>
+                        <table *ngIf="listFAQs.length > 0" class="table table-striped mt-3">
                          <thead>
                            <tr>
-                             <th scope="col"> Name </th>
-                             <th scope="col"> Username </th>
-                             <th scope="col"> Email </th>
+                             <th scope="col"> Question </th>
+                             <th scope="col"> Answer </th>
+                             <th scope="col"> Creation Date </th>
                              <th scope="col"></th>
                            </tr>
                          </thead>
                          <tbody>
-                           <tr *ngFor="let cust of listCustomers">
-                             <td> {{ cust.fullName }} </td>
-                             <td> {{ cust.customerName }} </td>
-                             <td> {{ cust.email }} </td>
+                           <tr *ngFor="let faq of listFAQs">                             
+                             <td> {{ faq.questionText }} </td>
+                             <td> {{ faq.answerText }} </td>
+                             <td> {{ faq.creationDate }} </td>
                              <td>
-                                 <i [routerLink]="['/list-customers', cust._id]" class="fa-solid fa-pen-to-square text-primary"> Profile </i>
+                                 <i [routerLink]="['/list-faqs', faq._id]" class="fa-solid fa-pen-to-square text-primary"> Profile </i>
                              </td>
                            </tr>
                          </tbody>
                        </table>
-                       <button class="btn btn-success float-end" [routerLink]="['/list-customers/add-customer']"> ADD CUSTOMER </button>
-                       <h5 style="text-align: start; margin-top: 10px;" *ngIf="listCustomers.length == 0"> No hi ha customers a la base de dades </h5>
+                       <button class="btn btn-success float-end" [routerLink]="['/list-faqs/add-faq']"> ADD FAQ </button>
+                       <h5 style="text-align: start; margin-top: 10px;" *ngIf="listFAQs.length == 0"> No hi ha FAQs a la base de dades </h5>
                     </div>
                 </div>
             </div>
